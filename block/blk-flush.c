@@ -1,4 +1,5 @@
 /*
+
  * Functions to sequence PREFLUSH and FUA writes.
  *
  * Copyright (C) 2011		Max Planck Institute for Gravitational Physics
@@ -92,7 +93,6 @@ enum {
 	 */
 	FLUSH_PENDING_TIMEOUT	= 5 * HZ,
 };
-
 static bool blk_kick_flush(struct request_queue *q,
 			   struct blk_flush_queue *fq);
 
