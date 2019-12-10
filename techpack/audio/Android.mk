@@ -47,3 +47,13 @@ ifeq ($(call is-board-platform-in-list,msmnile),true)
 $(shell rm -rf $(PRODUCT_OUT)/obj/vendor/qcom/opensource/audio-kernel/asoc/codecs/wcd9360/Module.symvers)
 include $(MY_LOCAL_PATH)/asoc/codecs/wcd9360/Android.mk
 endif
+
+#ifdef VENDOR_EDIT
+#Le.Li@PSW.MM.AudioDriver.SmartPA, 2018/08/31, Add for max98937 codec
+ifeq ($(call is-board-platform-in-list,msmnile $(MSMSTEPPE)),true)
+$(shell rm -rf $(PRODUCT_OUT)/obj/vendor/qcom/opensource/audio-kernel/asoc/codecs/max989xx/Module.symvers)
+include $(MY_LOCAL_PATH)/asoc/codecs/max989xx/Android.mk
+endif
+LOCAL_CFLAGS += -DVENDOR_EDIT
+#endif /* VENDOR_EDIT */
+
