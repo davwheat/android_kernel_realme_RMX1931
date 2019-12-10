@@ -24,6 +24,7 @@
 #include "adreno_trace.h"
 #include "kgsl_sharedmem.h"
 
+
 #define DRAWQUEUE_NEXT(_i, _s) (((_i) + 1) % (_s))
 
 /* Number of commands that can be queued in a context before it sleeps */
@@ -2047,10 +2048,13 @@ replay:
 	kfree(replay);
 }
 
+
+
 static void do_header_and_snapshot(struct kgsl_device *device, int fault,
 		struct adreno_ringbuffer *rb, struct kgsl_drawobj_cmd *cmdobj,
 		bool gx_on)
 {
+
 	struct kgsl_drawobj *drawobj = DRAWOBJ(cmdobj);
 
 	/* Always dump the snapshot on a non-drawobj failure */
