@@ -370,10 +370,12 @@ static void mdm_status_fn(struct work_struct *work)
 	mdm_update_gpio_configs(mdm, GPIO_UPDATE_RUNNING_CONFIG);
 }
 
+
 static void mdm_get_restart_reason(struct work_struct *work)
 {
 	int ret, ntries = 0;
 	char sfr_buf[RD_BUF_SIZE];
+
 	struct mdm_ctrl *mdm =
 		container_of(work, struct mdm_ctrl, restart_reason_work);
 	struct device *dev = mdm->dev;

@@ -1641,7 +1641,6 @@ static int lpm_suspend_prepare(void)
 {
 	suspend_in_progress = true;
 	lpm_stats_suspend_enter();
-
 	return 0;
 }
 
